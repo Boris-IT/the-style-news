@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config.js';
+
+const mods = import.meta.glob('../data/articles/*.js', { eager: true });
+const articles = Object.values(mods)
+  .map((m) => m.default)
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
+---
+<Base title={`${SITE.name} — ${SITE.tagline}`} description="Men's style, decoded. Considered guides to what is worth owning.">
+  <div class="idx">
+    {articles.map((a) => (
+      <a class="idx__item" href={`/${a.slug}/`}>
+        <p class="kicker" style="margin:0">{a.kicker}</p>
+        <h3>{a.title}</h3>
+        <p>{a.dek}</p>
+      </a>
+    ))}
+  </div>
+</Base>

@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config.js';
+
+export async function getStaticPaths() {
+  const mods = import.meta.glob('../data/articles/*.js', { eager: true });
+  return Object.values(mods).map((m) => ({
+    params: { slug: m.default.slug },
+    props: { a: m.default },
+  }));
+}
+
+const { a } = Astro.props;
+---
+<Base title={`${a.title} | ${SITE.name}`} description={a.description} image={a.hero?.src}>
+  <article>
+    <p class="kicker">{a.kicker}</p>
+    <h1>{a.title}</h1>
+    <p class="dek">{a.dek}</p>
+
+    <p class="byline">
+      By <strong>{a.author}</strong> · {a.dateLabel} · {a.readingTime}
+    </p>
+    <p class="disclosure">{SITE.disclosure}</p>
+
+    {a.hero && (
+      <>
+        <img class="hero" src={a.hero.src} alt={a.hero.alt} loading="eager" fetchpriority="high" />
+        <p class="caption">{a.hero.caption}</p>
+      </>
+    )}
+
+    <div class="body">
+      {a.blocks.map((b) => {
+        if (b.type === 'p') return <p set:html={b.html} />;
+
+        if (b.type === 'pull') return <blockquote class="pull" set:html={b.html} />;
+
+        if (b.type === 'entry')
+          return (
+            <div class="entry">
+              <p class="entry__num">{b.num}</p>
+              <h2>{b.h2}</h2>
+            </div>
+          );
+
+        if (b.type === 'pick')
+          return (
+            <aside class="pick">
+              <p class="pick__label">{b.label}</p>
+              <img class="pick__img" src={b.img} alt={b.alt} loading="lazy" />
+              <p class="pick__name">{b.name}</p>
+              <p class="pick__price">{b.price}</p>
+              <p>{b.blurb}</p>
+              <a class="cta" href={b.href} rel="sponsored noopener">{b.ctaText}</a>
+            </aside>
+          );
+
+        if (b.type === 'grid')
+          return (
+            <div class="grid">
+              {b.items.map((i) => (
+                <a class="card" href={i.href} rel="sponsored noopener">
+                  <img src={i.img} alt={i.alt} loading="lazy" />
+                  <span class="card__name">{i.name}</span><br />
+                  <span class="card__price">{i.price}</span>
+                </a>
+              ))}
+            </div>
+          );
+
+        return null;
+      })}
+    </div>
+  </article>
+</Base>

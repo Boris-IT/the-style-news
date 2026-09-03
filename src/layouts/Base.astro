@@ -1,0 +1,103 @@
+---
+import { SITE, TRACKING, OUTBOUND_DEFAULTS } from '../config.js';
+import '../styles/global.css';
+
+const { title, description, image, canonical } = Astro.props;
+const url = canonical ?? new URL(Astro.url.pathname, SITE.domain).href;
+const shopHost = new URL(SITE.publisherUrl).hostname.replace(/^www\./, '');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
+    <link rel="icon" href="/logo/stacked.png" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={image} />}
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {TRACKING.metaPixelId && (
+      <script is:inline set:html={`
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init','${TRACKING.metaPixelId}');fbq('track','PageView');
+      `} />
+    )}
+
+    {TRACKING.ga4Id && (
+      <>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${TRACKING.ga4Id}`}></script>
+        <script is:inline set:html={`
+          window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+          gtag('js',new Date());gtag('config','${TRACKING.ga4Id}');
+        `} />
+      </>
+    )}
+  </head>
+
+  <body>
+    <header class="masthead">
+      <a href="/"><img class="masthead__logo" src="/logo/horizontal-tagline.png" alt={SITE.name} width="1672" height="400" /></a>
+      <nav class="masthead__nav">
+        <a href="/">Gifts</a>
+        <a href="/">Style</a>
+        <a href="/about/">About</a>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <slot />
+    </main>
+
+    <footer class="wrap foot">
+      <p>{SITE.disclosure}</p>
+      <p>
+        © {new Date().getFullYear()} {SITE.name} · <a href="/about/">About us</a> ·
+        <a href={SITE.publisherUrl}>{shopHost}</a>
+      </p>
+    </footer>
+
+    <!--
+      Carries the ad's parameters across to the shop so Shopify doesn't book
+      these sessions as direct traffic. Anything the visitor arrived with wins;
+      our defaults only fill the gaps.
+    -->
+    <script is:inline define:vars={{ shopHost, defaults: OUTBOUND_DEFAULTS }}>
+      (function () {
+        var incoming = new URLSearchParams(window.location.search);
+        var carry = new URLSearchParams();
+
+        Object.keys(defaults).forEach(function (k) { carry.set(k, defaults[k]); });
+
+        // utm_campaign defaults to the article, so each page reports separately.
+        carry.set('utm_campaign', window.location.pathname.replace(/\//g, '') || 'home');
+
+        incoming.forEach(function (value, key) {
+          if (/^(utm_|fbclid|gclid|ttclid|epik|msclkid)/i.test(key)) carry.set(key, value);
+        });
+
+        document.querySelectorAll('a[href]').forEach(function (a) {
+          var href = a.getAttribute('href');
+          if (!href || href.indexOf('http') !== 0) return;
+          var u;
+          try { u = new URL(href); } catch (e) { return; }
+          if (u.hostname.replace(/^www\./, '') !== shopHost) return;
+          carry.forEach(function (value, key) {
+            if (!u.searchParams.has(key)) u.searchParams.set(key, value);
+          });
+          a.setAttribute('href', u.toString());
+        });
+      })();
+    </script>
+  </body>
+</html>
