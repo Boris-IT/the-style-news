@@ -57,9 +57,13 @@ const more = live
                 <div class="tr__meta">
                   <span class="tr__num">{b.num}</span>
                   <h2>{b.h2}</h2>
-                  {b.cta && (
+                  {b.cta ? (
                     <a class="tr__cta" href={b.href} rel="sponsored noopener">{b.cta}</a>
-                  )}
+                  ) : b.tag ? (
+                    // Not a link and not focusable — it keeps the column rhythm
+                    // without inviting a click that goes nowhere.
+                    <span class="tr__tag" aria-hidden="true">{b.tag}</span>
+                  ) : null}
                   {b.credit && <span class="tr__credit">Credit: {b.credit}</span>}
                 </div>
               </div>
