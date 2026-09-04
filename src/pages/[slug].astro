@@ -2,15 +2,23 @@
 import Base from '../layouts/Base.astro';
 import { SITE } from '../config.js';
 
+const mods = import.meta.glob('../data/articles/*.js', { eager: true });
+const live = Object.values(mods).map((m) => m.default).filter((a) => !a.draft);
+
 export async function getStaticPaths() {
   const mods = import.meta.glob('../data/articles/*.js', { eager: true });
-  return Object.values(mods).map((m) => ({
-    params: { slug: m.default.slug },
-    props: { a: m.default },
-  }));
+  return Object.values(mods)
+    .filter((m) => !m.default.draft)   // draft: true keeps a page off the site
+    .map((m) => ({ params: { slug: m.default.slug }, props: { a: m.default } }));
 }
 
 const { a } = Astro.props;
+
+// Other stories, newest first, for the "more" block at the end.
+const more = live
+  .filter((x) => x.slug !== a.slug)
+  .sort((x, y) => new Date(y.date) - new Date(x.date))
+  .slice(0, 3);
 ---
 <Base title={`${a.title} | ${SITE.name}`} description={a.description} image={a.hero?.src}>
   <article>
@@ -21,7 +29,7 @@ const { a } = Astro.props;
     <p class="byline">
       By <strong>{a.author}</strong> · {a.dateLabel} · {a.readingTime}
     </p>
-    <p class="disclosure">{SITE.disclosure}</p>
+    {a.partner && <p class="tag">{SITE.partnerTag}</p>}
 
     {a.hero && (
       <>
@@ -30,10 +38,9 @@ const { a } = Astro.props;
       </>
     )}
 
-    <div class="body">
+    <div class="body" class:list={{ 'body--flush': !a.hero && !a.partner }}>
       {a.blocks.map((b) => {
         if (b.type === 'p') return <p set:html={b.html} />;
-
         if (b.type === 'pull') return <blockquote class="pull" set:html={b.html} />;
 
         if (b.type === 'entry')
@@ -50,7 +57,7 @@ const { a } = Astro.props;
               <p class="pick__label">{b.label}</p>
               <img class="pick__img" src={b.img} alt={b.alt} loading="lazy" />
               <p class="pick__name">{b.name}</p>
-              <p class="pick__price">{b.price}</p>
+              {b.price && <p class="pick__price">{b.price}</p>}
               <p>{b.blurb}</p>
               <a class="cta" href={b.href} rel="sponsored noopener">{b.ctaText}</a>
             </aside>
@@ -69,8 +76,29 @@ const { a } = Astro.props;
             </div>
           );
 
+        if (b.type === 'cta')
+          return (
+            <aside class="endcta">
+              <p>{b.text}</p>
+              <a class="cta" href={b.href} rel="sponsored noopener">{b.ctaText}</a>
+            </aside>
+          );
+
         return null;
       })}
     </div>
   </article>
+
+  {more.length > 0 && (
+    <section class="more">
+      <p class="more__label">More from {SITE.name}</p>
+      {more.map((m) => (
+        <a class="more__item" href={`/${m.slug}/`}>
+          <span class="more__kicker">{m.kicker}</span>
+          <span class="more__title">{m.title}</span>
+          <span class="more__meta">{m.dateLabel} · {m.readingTime}</span>
+        </a>
+      ))}
+    </section>
+  )}
 </Base>

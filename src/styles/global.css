@@ -280,9 +280,91 @@ h1 {
   margin: 6px 0 8px;
 }
 
-.idx__item p { color: var(--ink-soft); font-size: 1rem; margin: 0; }
+.idx__dek { color: var(--ink-soft); font-size: 1rem; line-height: 1.5; margin: 0; }
 
 /* Product shots are square; a full-column square hero pushes the story too far
    down the page. Cap it and let it breathe instead. */
 .hero { max-height: 420px; object-fit: contain; padding: 10px 0; margin-inline: auto; }
 .pick__img { max-height: 340px; object-fit: contain; padding: 8px 0; margin-inline: auto; }
+
+/* Advertorial tag under the byline — small, grey, present. */
+.tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  border: 1px solid var(--rule);
+  padding: 4px 9px;
+  margin: 0 0 34px;
+}
+
+/* Closing call to action for readers who reach the end. */
+.endcta {
+  margin: 44px 0 0;
+  padding: 26px 0 0;
+  border-top: 1px solid var(--rule);
+}
+.endcta p { font-size: 1.05rem; color: var(--ink-soft); margin: 0 0 16px; }
+
+/* ── Homepage lead story ──────────────────────────────────────────────── */
+
+.lead {
+  display: block;
+  text-decoration: none;
+  padding: 46px 0 34px;
+  border-bottom: 1px solid var(--rule);
+}
+.lead .kicker { margin-top: 0; }
+.lead__title {
+  font-size: clamp(2rem, 6vw, 2.9rem);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.012em;
+  margin: 0 0 16px;
+}
+.lead__dek { font-size: 1.18rem; line-height: 1.5; color: var(--ink-soft); margin: 0 0 14px; }
+.lead__meta, .idx__meta, .more__meta {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin: 0;
+}
+.idx__meta { margin-top: 8px; }
+
+/* "More from" + section labels */
+.more { margin: 60px 0 0; padding-top: 22px; border-top: 1px solid var(--rule); }
+.more__label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 6px;
+}
+.idx .more__label { margin: 34px 0 0; }
+.more__item {
+  display: block;
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.more__kicker {
+  display: block;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 4px;
+}
+.more__title { display: block; font-size: 1.22rem; line-height: 1.3; margin-bottom: 4px; }
+
+/* Homepage strap */
+.strap { margin: 40px 0 0; padding: 22px 0 0; }
+.strap p { font-size: 1rem; line-height: 1.55; color: var(--ink-soft); }
+.strap a { color: var(--ink); }

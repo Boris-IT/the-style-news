@@ -5,16 +5,38 @@ import { SITE } from '../config.js';
 const mods = import.meta.glob('../data/articles/*.js', { eager: true });
 const articles = Object.values(mods)
   .map((m) => m.default)
-  .sort((a, b) => new Date(b.date) - new Date(a.date));
+  .filter((a) => !a.draft)
+  .sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || new Date(b.date) - new Date(a.date));
+
+const [lead, ...rest] = articles;
 ---
-<Base title={`${SITE.name} — ${SITE.tagline}`} description="Men's style, decoded. Considered guides to what is worth owning.">
-  <div class="idx">
-    {articles.map((a) => (
-      <a class="idx__item" href={`/${a.slug}/`}>
-        <p class="kicker" style="margin:0">{a.kicker}</p>
-        <h3>{a.title}</h3>
-        <p>{a.dek}</p>
-      </a>
-    ))}
-  </div>
+<Base title={`${SITE.name} — ${SITE.tagline}`} description="Men's style, decoded. Considered writing on what is actually worth owning, from Amsterdam.">
+  {lead && (
+    <a class="lead" href={`/${lead.slug}/`}>
+      <p class="kicker">{lead.kicker}</p>
+      <h1 class="lead__title">{lead.title}</h1>
+      <p class="lead__dek">{lead.dek}</p>
+      <p class="lead__meta">{lead.dateLabel} · {lead.readingTime}</p>
+    </a>
+  )}
+
+  {rest.length > 0 && (
+    <section class="idx">
+      <p class="more__label">Latest</p>
+      {rest.map((a) => (
+        <a class="idx__item" href={`/${a.slug}/`}>
+          <p class="kicker" style="margin:0">{a.kicker}</p>
+          <h3>{a.title}</h3>
+          <p class="idx__dek">{a.dek}</p>
+          <p class="idx__meta">{a.dateLabel} · {a.readingTime}</p>
+        </a>
+      ))}
+    </section>
+  )}
+
+  <section class="strap">
+    <p>{SITE.name} writes about men's clothing with one question in mind: what is actually
+    worth owning, and how do you tell the difference? Less interested in what's new than in
+    what lasts. Based in Amsterdam. <a href="/about/">About us</a></p>
+  </section>
 </Base>

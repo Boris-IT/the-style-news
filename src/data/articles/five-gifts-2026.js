@@ -2,6 +2,9 @@ const SHOP = 'https://www.sonofjohnlabel.com/products/';
 
 export default {
   slug: 'five-gifts-2026',
+  partner: true,
+  // Parked until gift intent picks up in November. Flip to false to republish.
+  draft: true,
   kicker: 'Gift guide',
   title: "The Five Gifts You Can't Go Wrong With in 2026",
   dek: "Not the safest gifts — the ones that actually get used. A short list for the man who insists he doesn't need anything.",

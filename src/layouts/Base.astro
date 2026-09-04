@@ -49,8 +49,7 @@ const shopHost = new URL(SITE.publisherUrl).hostname.replace(/^www\./, '');
     <header class="masthead">
       <a href="/"><img class="masthead__logo" src="/logo/horizontal-tagline.png" alt={SITE.name} width="1672" height="400" /></a>
       <nav class="masthead__nav">
-        <a href="/">Gifts</a>
-        <a href="/">Style</a>
+        <a href="/">Latest</a>
         <a href="/about/">About</a>
       </nav>
     </header>
@@ -60,10 +59,8 @@ const shopHost = new URL(SITE.publisherUrl).hostname.replace(/^www\./, '');
     </main>
 
     <footer class="wrap foot">
-      <p>{SITE.disclosure}</p>
       <p>
-        © {new Date().getFullYear()} {SITE.name} · <a href="/about/">About us</a> ·
-        <a href={SITE.publisherUrl}>{shopHost}</a>
+        © {new Date().getFullYear()} {SITE.name} · {SITE.tagline} · <a href="/about/">About</a>
       </p>
     </footer>
 

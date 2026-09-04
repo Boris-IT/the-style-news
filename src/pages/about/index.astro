@@ -2,17 +2,21 @@
 import Base from '../../layouts/Base.astro';
 import { SITE } from '../../config.js';
 ---
-<Base title={`About | ${SITE.name}`} description="Who publishes The Style News.">
+<Base title={`About | ${SITE.name}`} description="What The Style News is, and who publishes it.">
   <p class="kicker">About</p>
-  <h1>About The Style News</h1>
+  <h1>Men's style, decoded</h1>
   <div class="body">
     <p>The Style News writes about men's clothing with one question in mind: what is
-    actually worth owning, and how do you tell the difference?</p>
+    actually worth owning, and how do you tell the difference? We're less interested in
+    what's new than in what lasts — fabric, construction, and the small decisions that
+    separate something you wear for a season from something you wear for years.</p>
 
-    <p>The Style News is published by <strong>Son of John B.V.</strong>, an Amsterdam
-    boxer short label. Articles here feature and link to Son of John products, and we
-    say so on every article rather than burying it. Where we recommend something outside
-    our own range, we make no money from it.</p>
+    <p>We're based in Amsterdam, and it shows. A lot of what we cover comes out of
+    this city, because a lot of the interesting thinking about making things properly
+    does too.</p>
+
+    <p>{SITE.disclosure} Where we recommend something outside that range, we make
+    nothing from it.</p>
 
     <p>Questions or corrections: <a href="mailto:hello@thestylenews.com">hello@thestylenews.com</a></p>
   </div>
