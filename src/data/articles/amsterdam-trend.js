@@ -36,7 +36,7 @@ export default {
       img: null,
       imgNote: 'Wide or pleated trousers, full length, on the street',
       credit: null,
-      text: `Not the extreme baggy silhouette of two years ago — just cut with air through the thigh and a proper break over the shoe. Pleats are back and nobody is embarrassed about it. Works because you can actually cycle in them.`,
+      text: `Not the extreme baggy silhouette of two years ago — just cut with air through the thigh and a proper break over the shoe. Pleats are back and nobody is embarrassed about it. It reads relaxed without reading sloppy, which is a narrower line than it sounds.`,
     },
 
     {
@@ -56,7 +56,7 @@ export default {
       img: null,
       imgNote: 'Flat, thin-soled gum-bottomed sneakers, close crop on the foot',
       credit: null,
-      text: `Flat, thin-soled, gum-bottomed. Chunky is finished on the cobbles and the reason is boringly practical — you can feel a pedal through them. Wear them scuffed; new ones look like you're trying.`,
+      text: `Flat, thin-soled, gum-bottomed. Chunky is finished and the reason is boringly practical: a thin sole keeps you closer to the ground. Wear them scuffed — new ones look like you're trying.`,
     },
 
     {
@@ -70,7 +70,7 @@ export default {
     },
 
     { type: 'entry', num: 'The verdict', h2: 'What connects them' },
-    { type: 'p', html: `None of these came off a runway. They come from a city where most people are on a bike in unreliable weather, and they spread because they solve something — which is also why they travel.` },
+    { type: 'p', html: `None of these came off a runway. They come from a city that dresses for movement and unreliable weather, and they spread because each one solves something — which is also why they travel.` },
 
     {
       type: 'cta',
