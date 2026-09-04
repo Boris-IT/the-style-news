@@ -6,17 +6,17 @@ export default {
   featured: true,
   kicker: 'The list',
   title: 'The 5 Biggest Amsterdam Fashion Trends Going Global',
-  dek: "Five things the city is wearing that the rest of Europe hasn't caught up with yet. Copy them.",
+  dek: "Five things guys in Amsterdam are wearing right now that the rest of Europe hasn't caught onto yet.",
   description:
-    'Five Amsterdam street-style trends now spreading well beyond the city: loose boxer shorts, roomier trousers, the henley, low-profile sneakers and navy on navy.',
+    'Five things men in Amsterdam are wearing right now: loose boxer shorts, wider trousers, the henley, flat sneakers and navy on navy. What they are and how to wear them.',
   author: 'The Style News Editors',
   date: '2026-09-04',
   dateLabel: '4 September 2026',
-  readingTime: '3 min read',
+  readingTime: '2 min read',
   hero: null,
 
   blocks: [
-    { type: 'p', html: `Amsterdam has quietly become the most copied city in European menswear, and none of it came off a runway. It's the people on bikes — loose, flat-soled, dressed for weather that turns twice before lunch. We've spent the season watching what the city actually puts on. These are the five worth stealing, starting with the one nobody saw coming.` },
+    { type: 'p', html: `Amsterdam has a way of dressing that everyone is starting to copy. Nothing loud, nothing complicated — just comfortable clothes that happen to look good. Here are the five you'll see all over the city right now, and how to wear them.` },
 
     {
       type: 'trend',
@@ -26,7 +26,7 @@ export default {
       alt: 'Blue and white striped loose-fitting cotton boxer shorts',
       cta: 'View at Son of John',
       href: SHOP + '2-pack-i-striped-duo',
-      text: `For a decade the default was tight — jersey trunks, cut close, bought in threes and never thought about again. That is over. Trousers got roomier and the layer underneath followed: woven, cut wide, actually breathing. The best we found are by <strong>Son of John</strong>, an Amsterdam label making them from shirting fabric, which is the trick — thin but sturdy, backed by a warranty, in patterns that complement an outfit instead of hiding under it. The rare upgrade you actually notice every morning, and worth the money.`,
+      text: `Tight trunks are on the way out. Loose woven boxers are just more comfortable, and they don't show a line through your trousers. The best ones we found are from <strong>Son of John</strong>. They're made from shirt fabric, which makes them thin but strong, and they come with a warranty. The patterns are good enough that you don't mind them showing.`,
     },
 
     {
@@ -35,8 +35,7 @@ export default {
       h2: 'Trousers with room in them',
       img: null,
       imgNote: 'Wide or pleated trousers, full length, on the street',
-      credit: null,
-      text: `Not the extreme baggy silhouette of two years ago — just cut with air through the thigh and a proper break over the shoe. Pleats are back and nobody is embarrassed about it. It reads relaxed without reading sloppy, which is a narrower line than it sounds.`,
+      text: `Skinny is done. You want space through the leg and a hem that falls straight over your shoe. Pleats are fine again. Keep the top half simple and it works with almost anything.`,
     },
 
     {
@@ -45,18 +44,16 @@ export default {
       h2: 'The henley',
       img: null,
       imgNote: 'Henley in waffle or fine knit, top buttons open, on body',
-      credit: null,
-      text: `Quietly doing the job the plain tee used to. The collarless placket gives a neckline some structure without a collar's formality — it layers under everything and still looks deliberate on its own. Waffle knit when it's cold, fine jersey the rest of the year.`,
+      text: `A t-shirt with a few buttons at the neck. That's it — and it looks a lot better than a plain tee without you doing anything extra. Leave the top buttons open. Waffle knit in winter, thin cotton the rest of the year.`,
     },
 
     {
       type: 'trend',
       num: '4',
-      h2: 'Low-profile sneakers',
+      h2: 'Flat, low sneakers',
       img: null,
       imgNote: 'Flat, thin-soled gum-bottomed sneakers, close crop on the foot',
-      credit: null,
-      text: `Flat, thin-soled, gum-bottomed. Chunky is finished and the reason is boringly practical: a thin sole keeps you closer to the ground. Wear them scuffed — new ones look like you're trying.`,
+      text: `Chunky trainers are over. Flat ones with a thin sole, in white or gum, are what you'll see everywhere. They go with everything, and they look better once they've been worn in a bit.`,
     },
 
     {
@@ -65,12 +62,11 @@ export default {
       h2: 'Navy on navy',
       img: null,
       imgNote: 'Full navy outfit — shirt and trousers in slightly different tones',
-      credit: null,
-      text: `Black is out and navy took the whole outfit, top to bottom, in tones that don't quite match. It reads considered rather than severe, and it is the easiest way to look put together with two items.`,
+      text: `Black got boring. Navy top, navy trousers, slightly different shades so it isn't a suit. It looks put together without much thought, which is the whole point.`,
     },
 
-    { type: 'entry', num: 'The verdict', h2: 'What connects them' },
-    { type: 'p', html: `None of these came off a runway. They come from a city that dresses for movement and unreliable weather, and they spread because each one solves something — which is also why they travel.` },
+    { type: 'entry', num: 'The verdict', h2: 'Why it works' },
+    { type: 'p', html: `None of this is complicated and none of it is expensive to try. It's comfortable clothes that look good, which is why it's spreading. Start with number one — it's the one nobody sees coming.` },
 
     {
       type: 'cta',
