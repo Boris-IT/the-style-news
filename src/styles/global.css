@@ -172,9 +172,10 @@ h1 {
 /* ── Product module ───────────────────────────────────────────────────── */
 
 .pick {
-  background: var(--wash);
-  padding: 26px 24px 28px;
-  margin: 30px 0;
+  background: #fff;
+  border: 1px solid var(--rule);
+  padding: 22px 24px 26px;
+  margin: 34px 0;
 }
 
 .pick__label {
@@ -187,7 +188,7 @@ h1 {
   margin: 0 0 14px;
 }
 
-.pick__img { background: #fff; margin: 0 0 18px; }
+.pick__img { margin: 0 0 16px; }
 
 .pick__name {
   font-size: 1.3rem;
@@ -285,7 +286,7 @@ h1 {
 /* Product shots are square; a full-column square hero pushes the story too far
    down the page. Cap it and let it breathe instead. */
 .hero { max-height: 420px; object-fit: contain; padding: 10px 0; margin-inline: auto; }
-.pick__img { max-height: 340px; object-fit: contain; padding: 8px 0; margin-inline: auto; }
+.pick__img { max-height: 300px; object-fit: contain; margin-inline: auto; }
 
 /* Advertorial tag under the byline — small, grey, present. */
 .tag {
@@ -368,3 +369,9 @@ h1 {
 .strap { margin: 40px 0 0; padding: 22px 0 0; }
 .strap p { font-size: 1rem; line-height: 1.55; color: var(--ink-soft); }
 .strap a { color: var(--ink); }
+
+/* The pick module reads as an inset editorial card: white ground, hairline
+   border, product sitting flush rather than inside a second visible box. */
+.pick__label { border-bottom: 1px solid var(--rule); padding-bottom: 12px; }
+.pick__name { margin-top: 2px; }
+.pick .cta { margin-top: 2px; }
