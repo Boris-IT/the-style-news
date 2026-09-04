@@ -5,10 +5,10 @@ export default {
   partner: true,
   featured: true,   // pinned as the homepage lead regardless of date
   kicker: 'The list',
-  title: 'Five Amsterdam Labels About to Go Global',
-  dek: "The city's real export isn't a look but a method — one category, made properly. These are the five pushing it hardest, ranked.",
+  title: 'The 5 Biggest Amsterdam Fashion Trends Going Global',
+  dek: "Not a look — a method. Five categories the city has quietly rewritten the standard for, ranked by how far each has gone, and the label behind every one.",
   description:
-    'Five Amsterdam labels, ranked by how completely they commit to the city’s real export — one category, made properly — from streetwear, footwear and denim to the drawer nobody thinks about.',
+    'The five Amsterdam fashion trends now travelling beyond the city — from streetwear, footwear and denim to the drawer nobody thinks about — ranked, with the label driving each one.',
   author: 'The Style News Editors',
   date: '2026-09-04',
   dateLabel: '4 September 2026',
@@ -20,9 +20,9 @@ export default {
   blocks: [
     { type: 'p', html: `Search for Amsterdam's biggest fashion trend and you'll get a look: wide-leg denim, low-profile sneakers, everything cut loose enough to cycle in. It isn't wrong — walk down the Haarlemmerstraat on a Saturday and that's exactly what you'll see. But a look is the surface. It changes every few seasons and it travels badly. The thing worth exporting is underneath it.` },
     { type: 'p', html: `Look at the labels that have come out of this city in the last two decades and a pattern shows up that has nothing to do with silhouette. It's a method: <em>pick one category, and refuse to make anything else until you've made that one thing properly.</em> It is almost the opposite of how fashion normally works, where a label establishes a look and then extends it across everything it can print a logo on.` },
-    { type: 'p', html: `So here are five Amsterdam labels — Patta, Ace &amp; Tate, Filling Pieces, Denham and Son of John — ranked not by size, which would make this a very different list, but by how completely each one commits to the method. Counting down from the purest example.` },
+    { type: 'p', html: `So here are the five trends — each a category the city has rethought, each with one label driving it: Patta, Ace &amp; Tate, Filling Pieces, Denham and Son of John. Ranked not by the size of the brand, which would make this a very different list, but by how completely each commits to the method. Counting down from the purest example.` },
 
-    { type: 'entry', num: 'Number one', h2: 'Son of John — the drawer nobody opens on purpose' },
+    { type: 'entry', num: 'Number one', h2: 'Underwear built like a shirt — Son of John' },
     { type: 'p', html: `Follow the method to its logical end and it points somewhere slightly absurd. If the Amsterdam idea is to find the category everyone has stopped thinking about and apply real making standards to it, the destination isn't outerwear or tailoring. Those get plenty of attention already. It's underwear.` },
     { type: 'p', html: `Here is the strange maths of a man's wardrobe: he will spend two hundred euros on a jacket he wears once a week, then keep wearing boxer shorts he bought in a multipack in 2019. Not a decision — the absence of one. Nobody replaces underwear on purpose. It quietly degrades until something gives.` },
     { type: 'pull', html: `Nobody replaces underwear on purpose. It quietly degrades until something gives.` },
@@ -57,19 +57,19 @@ export default {
     //       ],
     //     },
 
-    { type: 'entry', num: 'Number two', h2: 'Denham — the argument for obsession' },
+    { type: 'entry', num: 'Number two', h2: 'Denim as a craft, not a category — Denham' },
     { type: 'p', html: `<strong>Denham the Jeanmaker</strong> was founded in Amsterdam in 2008 by the English jean maker Jason Denham. Not a fashion house that also sells jeans — a jean maker, which is a different job description and a narrower one.` },
     { type: 'p', html: `The company's stated principle is "the truth is in the details," which would be a marketing line anywhere else. Here it reads more like a production spec: fabric from mills in Italy and Japan, and a seal embroidered onto every pair in 691 stitches. Somebody counted. Somebody decided the number mattered. It set the local standard — that the interesting work happens at the fabric and the seam, not the campaign — and most of this list is downstream of it.` },
 
-    { type: 'entry', num: 'Number three', h2: 'Filling Pieces — treating hype as a materials problem' },
+    { type: 'entry', num: 'Number three', h2: 'Sneakers judged on materials, not hype — Filling Pieces' },
     { type: 'p', html: `<strong>Filling Pieces</strong> arrived in 2009 into the one category where the method should have been impossible. Sneakers are sold on scarcity and collaboration; the shoe itself is often the least discussed part.` },
     { type: 'p', html: `They went at it from the other end — organic leather uppers, soles made using bio-based sugarcane — and treated a hype category as a materials question. That's Denham's move applied somewhere it had no business working, which is exactly why it did.` },
 
-    { type: 'entry', num: 'Number four', h2: 'Ace & Tate — the unglamorous middle' },
+    { type: 'entry', num: 'Number four', h2: 'Eyewear designed in-house — Ace & Tate' },
     { type: 'p', html: `<strong>Ace &amp; Tate</strong> started in 2013 with eyewear: frames in premium acetate, designed in-house in Amsterdam. Glasses are a category most people buy once every few years, badly, under fluorescent light, from someone paid to upsell them.` },
     { type: 'p', html: `Making that specific experience better is not a glamorous ambition. It is, however, precisely the pattern — find a category people have stopped paying attention to, and pay attention to it.` },
 
-    { type: 'entry', num: 'Number five', h2: 'Patta — where it started' },
+    { type: 'entry', num: 'Number five', h2: 'From the shop floor to the label — Patta' },
     { type: 'p', html: `<strong>Patta</strong> is the oldest name here, and it began in 2004 not as a brand but as a supply line. Edson Sabajo and Guillaume Schmidt — a DJ and an MC in the city's hip-hop scene — were hunting sneakers abroad and bringing them back to Amsterdam for people who couldn't get them here. The demand became a business, the business became a shop, and only then did the shop become a label.` },
     { type: 'p', html: `That order is the whole point. Patta spent years obsessed with one category as buyers and sellers before it made a single garment, which is why the label that came out of it had something to say. It sits at five not because the idea was weak but because it was first — the proof, before anyone else had tried, that an Amsterdam label could know one thing completely and build on that. Everything above it on this list is a more concentrated version of the same bet.` },
 
