@@ -6,9 +6,9 @@ export default {
   featured: true,
   kicker: 'The list',
   title: 'The 5 Biggest Amsterdam Fashion Trends Going Global',
-  dek: 'What the city is actually wearing — and where to start if you want in.',
+  dek: "Five things the city is wearing that the rest of Europe hasn't caught up with yet. Copy them.",
   description:
-    'Five Amsterdam street-style trends now spreading well beyond the city: loose boxer shorts, roomier trousers, the open shirt layer, low-profile sneakers and navy on navy.',
+    'Five Amsterdam street-style trends now spreading well beyond the city: loose boxer shorts, roomier trousers, the henley, low-profile sneakers and navy on navy.',
   author: 'The Style News Editors',
   date: '2026-09-04',
   dateLabel: '4 September 2026',
@@ -16,7 +16,7 @@ export default {
   hero: null,
 
   blocks: [
-    { type: 'p', html: `Amsterdam dresses for a bike, not a runway — loose, flat-soled, layered for weather that turns twice before lunch. These are the five that have started showing up well outside the ring road.` },
+    { type: 'p', html: `Amsterdam has quietly become the most copied city in European menswear, and none of it came off a runway. It's the people on bikes — loose, flat-soled, dressed for weather that turns twice before lunch. We've spent the season watching what the city actually puts on. These are the five worth stealing, starting with the one nobody saw coming.` },
 
     {
       type: 'trend',
@@ -27,7 +27,7 @@ export default {
       credit: 'Son of John',
       cta: 'View at Son of John',
       href: SHOP + '2-pack-i-striped-duo',
-      text: `Trousers got roomier and the layer underneath followed. Woven and cut wide has replaced tight jersey, and once the fit stopped being the point, the fabric became it — shirting patterns, two-ply cotton, the same standards as a good shirt. <strong>Son of John</strong> is the Amsterdam label that pushed it furthest. Ships worldwide.`,
+      text: `For a decade the default was tight — jersey trunks, cut close, bought in threes and never thought about again. That is over. Trousers got roomier and the layer underneath followed: woven, cut wide, actually breathing. The best we found are by <strong>Son of John</strong>, an Amsterdam label making them from shirting fabric, which is the trick — thin but sturdy, backed by a warranty, in patterns that complement an outfit instead of hiding under it. Ships worldwide.`,
     },
 
     {
@@ -43,11 +43,11 @@ export default {
     {
       type: 'trend',
       num: '3',
-      h2: 'A shirt worn open over a longsleeve',
+      h2: 'The henley',
       img: null,
-      imgNote: 'Open overshirt or button-down over a plain long-sleeved tee',
+      imgNote: 'Henley in waffle or fine knit, top buttons open, on body',
       credit: null,
-      text: `The most practical thing on the list. An overshirt left open over a plain long-sleeved tee solves mornings that start at nine degrees and end at eighteen. Contrast the weights, not the colours: thin jersey under something with structure.`,
+      text: `Quietly doing the job the plain tee used to. The collarless placket gives a neckline some structure without a collar's formality — it layers under everything and still looks deliberate on its own. Waffle knit when it's cold, fine jersey the rest of the year.`,
     },
 
     {
