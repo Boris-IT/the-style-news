@@ -26,7 +26,7 @@ export default {
       alt: 'Blue and white striped loose-fitting cotton boxer shorts',
       cta: 'View at Son of John',
       href: SHOP + '2-pack-i-striped-duo',
-      text: `Tight trunks are on the way out. Loose woven boxers are more comfortable and they just look better — more grown up, less gym locker. The best ones we found are from <strong>Son of John</strong>. They're made from shirt fabric, which makes them thin but strong, and they come with a warranty. It's a small upgrade that lifts your whole outfit. Their own patterns, and a small logo on the back that finishes them off.`,
+      text: `Tight trunks are on the way out. Loose woven boxers are more comfortable and they just look better — more grown up, less teenager. The best ones we found are from <strong>Son of John</strong>. They're made from shirt fabric, which makes them thin but strong, and they come with a warranty. It's a small upgrade that lifts your whole outfit. Their own patterns, and a small logo on the back that finishes them off.`,
     },
 
     {
