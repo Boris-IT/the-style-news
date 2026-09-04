@@ -390,7 +390,14 @@ h1 {
   aspect-ratio: 4 / 5;
   background: var(--wash);
 }
-.tr__img { width: 100%; height: auto; background: var(--wash); }
+/* Every trend picture sits in the same 4:5 frame as the Son of John shot, so
+   the entries line up down the page. */
+.tr__img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--wash);
+}
 
 .tr__ph {
   display: flex;
