@@ -45,18 +45,26 @@ const more = live
 
         if (b.type === 'trend')
           return (
-            <div class="trend">
-              <div class="trend__head">
-                <span class="trend__num">{b.num}</span>
-                <h2>{b.h2}</h2>
+            <section class="tr">
+              <div class="tr__top">
+                <div class="tr__figwrap">
+                  {b.img ? (
+                    <img class="tr__img" src={b.img} alt={b.alt} loading="lazy" />
+                  ) : (
+                    <div class="tr__ph"><span>{b.imgNote}</span></div>
+                  )}
+                </div>
+                <div class="tr__meta">
+                  <span class="tr__num">{b.num}</span>
+                  <h2>{b.h2}</h2>
+                  {b.cta && (
+                    <a class="tr__cta" href={b.href} rel="sponsored noopener">{b.cta}</a>
+                  )}
+                  {b.credit && <span class="tr__credit">Credit: {b.credit}</span>}
+                </div>
               </div>
-              {b.img && (
-                <figure class="trend__fig">
-                  <img src={b.img} alt={b.alt} loading="lazy" />
-                  {b.caption && <figcaption>{b.caption}</figcaption>}
-                </figure>
-              )}
-            </div>
+              <p class="tr__text" set:html={b.text} />
+            </section>
           );
 
         if (b.type === 'entry')

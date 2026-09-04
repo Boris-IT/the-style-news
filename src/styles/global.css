@@ -376,50 +376,81 @@ h1 {
 .pick__name { margin-top: 2px; }
 .pick .cta { margin-top: 2px; }
 
-/* ── Trend entries: big numeral, room for a picture ───────────────────── */
 
-.trend { margin: 54px 0 0; }
+/* ── Trend entries: numeral, picture, title, two lines ─────────────────── */
 
-.trend__head {
+.tr { margin: 46px 0 0; padding-top: 26px; border-top: 1px solid var(--rule); }
+
+.tr__top { display: grid; grid-template-columns: 1fr; gap: 18px; align-items: start; }
+
+.tr__figwrap { margin: 0; }
+
+.tr__img,
+.tr__ph {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--wash);
+}
+.tr__img { object-fit: contain; }
+
+.tr__ph {
   display: flex;
-  align-items: baseline;
-  gap: 14px;
-  border-top: 1px solid var(--ink);
-  padding-top: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  border: 1px dashed #cfcfcb;
 }
-
-.trend__num {
+.tr__ph span {
   font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--brand);
-  flex: none;
-  padding-top: 4px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: var(--ink-faint);
+  text-align: center;
+  max-width: 22ch;
 }
 
-.trend__head h2 {
-  font-size: clamp(1.45rem, 4.6vw, 1.85rem);
-  line-height: 1.16;
+.tr__num {
+  display: block;
+  font-family: var(--serif);
+  font-size: 3.4rem;
+  line-height: 0.9;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.tr__meta h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
   font-weight: 400;
   letter-spacing: -0.01em;
-  margin: 0 0 12px;
+  margin: 0 0 14px;
 }
 
-.trend__fig { margin: 4px 0 20px; }
-.trend__fig img {
-  width: 100%;
-  background: var(--wash);
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
-}
-.trend__fig figcaption {
+.tr__cta {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
   font-family: var(--sans);
   font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 11px 20px;
+}
+.tr__cta:hover { opacity: 0.88; }
+
+.tr__credit {
+  display: block;
+  font-family: var(--sans);
+  font-size: 11px;
   color: var(--ink-faint);
-  margin-top: 8px;
+  margin-top: 12px;
 }
 
-/* Tighter opening: the first paragraph shouldn't need a drop cap when the
-   intro is one short block. */
-.body > p:first-of-type::first-letter { font-size: 3.1em; }
+.tr__text { font-size: 1.02rem; line-height: 1.55; margin: 20px 0 0; }
+
+@media (min-width: 620px) {
+  .tr__top { grid-template-columns: 0.9fr 1.1fr; gap: 30px; }
+  .tr__num { font-size: 4.2rem; }
+}
