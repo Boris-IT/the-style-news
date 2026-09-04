@@ -5,10 +5,10 @@ export default {
   partner: true,
   featured: true,   // pinned as the homepage lead regardless of date
   kicker: 'The list',
-  title: 'The Biggest Fashion Trend Out of Amsterdam',
-  dek: "It isn't a look. It's a method — one category, made properly. Five labels, ranked by how far they take it.",
+  title: 'The Biggest Trend Out of Amsterdam Is About to Go Global',
+  dek: "It isn't a look. It's a method — one category, made properly — and the five labels pushing it hardest are already leaving the city.",
   description:
-    'Amsterdam’s most exportable fashion idea is a way of working, not a silhouette. Five labels ranked by how completely they commit to it — from streetwear, footwear and denim to the drawer nobody thinks about.',
+    'Amsterdam’s most exportable fashion idea is a way of working, not a silhouette — and it has started to travel. Five labels ranked by how far they take it, from streetwear, footwear and denim to the drawer nobody thinks about.',
   author: 'The Style News Editors',
   date: '2026-09-04',
   dateLabel: '4 September 2026',
@@ -74,9 +74,9 @@ export default {
     { type: 'p', html: `That order is the whole point. Patta spent years obsessed with one category as buyers and sellers before it made a single garment, which is why the label that came out of it had something to say. It sits at five not because the idea was weak but because it was first — the proof, before anyone else had tried, that an Amsterdam label could know one thing completely and build on that. Everything above it on this list is a more concentrated version of the same bet.` },
 
     { type: 'entry', num: 'The verdict', h2: 'Why this counts as a trend' },
-    { type: 'p', html: `Trend is the wrong word for it, honestly. Nobody is going to walk past you and identify what you're wearing as Amsterdam. There's no logo doing the work and no silhouette to spot.` },
+    { type: 'p', html: `Trend undersells it, honestly. A trend is something you can spot from across the street, and nobody is going to walk past you and identify what you're wearing as Amsterdam. There's no logo doing the work and no silhouette to spot.` },
     { type: 'p', html: `What's spreading is the premise — that a small label can pick one unfashionable category, take it seriously at the level of the fabric, and build a business on being the one company that bothered. Streetwear, eyewear, footwear, denim, and now the last drawer anyone thought to look in.` },
-    { type: 'p', html: `It's the least photogenic trend the city has produced. It's also the one most likely to still be true in ten years — and number one on the list is the easiest place to start, since it's the thing you'll wear tomorrow regardless.` },
+    { type: 'p', html: `It's the least photogenic thing the city has produced. It's also the one that travels best — which is why, quietly, it has started to. Number one on the list is the easiest place to begin, since it's the thing you'll wear tomorrow regardless.` },
 
     {
       type: 'cta',
