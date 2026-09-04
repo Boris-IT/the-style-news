@@ -100,6 +100,9 @@ const more = live
             </div>
           );
 
+        if (b.type === 'note')
+          return <p class="note" set:html={b.html} />;
+
         if (b.type === 'cta')
           return (
             <aside class="endcta">

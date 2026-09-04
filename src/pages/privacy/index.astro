@@ -12,8 +12,8 @@ const tracks = Boolean(TRACKING.metaPixelId || TRACKING.ga4Id);
 
     <h2>Who runs this site</h2>
     <p>{SITE.name} is published by <strong>Son of John B.V.</strong>, Keizersstraat 32,
-    Amsterdam, the Netherlands. You can reach us at
-    <a href="mailto:hello@thestylenews.com">hello@thestylenews.com</a>.</p>
+    Amsterdam, the Netherlands. For any question about this site or your data,
+    contact us via <a href={SITE.publisherUrl}>sonofjohnlabel.com</a>.</p>
 
     {tracks ? (
       <>
@@ -48,6 +48,6 @@ const tracks = Boolean(TRACKING.metaPixelId || TRACKING.ga4Id);
     <h2>Your rights</h2>
     <p>Under the GDPR you can ask what we hold about you, ask us to correct or
     delete it, and complain to the Autoriteit Persoonsgegevens if you think we've
-    got it wrong. Email us first and we'll try to sort it out.</p>
+    got it wrong. Get in touch with us first and we'll try to sort it out.</p>
   </div>
 </Base>

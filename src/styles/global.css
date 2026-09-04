@@ -520,3 +520,12 @@ h1 {
   letter-spacing: -0.006em;
   margin: 34px 0 10px;
 }
+
+/* Small disclosures at the foot of an article — AI imagery, corrections. */
+.note {
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-faint);
+  margin: 30px 0 0;
+}
