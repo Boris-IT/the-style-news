@@ -284,5 +284,5 @@ h1 {
 
 /* Product shots are square; a full-column square hero pushes the story too far
    down the page. Cap it and let it breathe instead. */
-.hero { max-height: 420px; object-fit: contain; padding: 10px 0; }
-.pick__img { max-height: 340px; object-fit: contain; padding: 8px 0; }
+.hero { max-height: 420px; object-fit: contain; padding: 10px 0; margin-inline: auto; }
+.pick__img { max-height: 340px; object-fit: contain; padding: 8px 0; margin-inline: auto; }
