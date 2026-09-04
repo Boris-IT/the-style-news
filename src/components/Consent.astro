@@ -1,0 +1,101 @@
+---
+import { TRACKING, SITE } from '../config.js';
+
+// The banner only exists when there is actually something to consent to.
+// With no tracking IDs configured the site sets nothing, so asking would be
+// theatre — and a banner that appears for no reason trains people to dismiss it.
+const needsConsent = Boolean(TRACKING.metaPixelId || TRACKING.ga4Id);
+---
+{needsConsent && (
+  <>
+    <div id="consent" class="consent" hidden role="dialog" aria-live="polite"
+         aria-label="Cookie choice">
+      <div class="consent__inner">
+        <p class="consent__text">
+          We'd like to set cookies to measure how our ads perform. Nothing about
+          the site changes if you say no. <a href="/privacy/">How we use them</a>.
+        </p>
+        <div class="consent__actions">
+          <button type="button" class="consent__btn" data-consent="denied">Decline</button>
+          <button type="button" class="consent__btn" data-consent="granted">Accept</button>
+        </div>
+      </div>
+    </div>
+
+    <script is:inline define:vars={{ pixel: TRACKING.metaPixelId, ga4: TRACKING.ga4Id }}>
+      (function () {
+        var KEY = 'tsn-consent';
+        var VERSION = 1;
+
+        function loadTrackers() {
+          if (window.__tsnTrackersLoaded) return;
+          window.__tsnTrackersLoaded = true;
+
+          if (pixel) {
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+            document,'script','https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', pixel);
+            fbq('track', 'PageView');
+          }
+
+          if (ga4) {
+            var g = document.createElement('script');
+            g.async = true;
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4;
+            document.head.appendChild(g);
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function () { dataLayer.push(arguments); };
+            gtag('js', new Date());
+            gtag('config', ga4);
+          }
+        }
+
+        function read() {
+          try {
+            var raw = localStorage.getItem(KEY);
+            if (!raw) return null;
+            var v = JSON.parse(raw);
+            return v && v.version === VERSION ? v : null;
+          } catch (e) { return null; }
+        }
+
+        function save(state) {
+          try {
+            localStorage.setItem(KEY, JSON.stringify({
+              state: state,
+              version: VERSION,
+              at: new Date().toISOString()
+            }));
+          } catch (e) {}
+        }
+
+        var el = document.getElementById('consent');
+        var existing = read();
+
+        if (existing && existing.state === 'granted') {
+          loadTrackers();
+        } else if (!existing) {
+          el.hidden = false;                       // no prior choice — ask
+        }
+
+        el.addEventListener('click', function (ev) {
+          var btn = ev.target.closest('[data-consent]');
+          if (!btn) return;
+          var state = btn.getAttribute('data-consent');
+          save(state);
+          el.hidden = true;
+          if (state === 'granted') loadTrackers();
+        });
+
+        // Used by the privacy page to let people change their mind.
+        window.tsnResetConsent = function () {
+          try { localStorage.removeItem(KEY); } catch (e) {}
+          location.reload();
+        };
+      })();
+    </script>
+  </>
+)}

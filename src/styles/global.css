@@ -460,3 +460,63 @@ h1 {
   .tr__top { grid-template-columns: 0.9fr 1.1fr; gap: 30px; }
   .tr__num { font-size: 4.2rem; }
 }
+
+/* ── Cookie consent ───────────────────────────────────────────────────── */
+
+.consent {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 50;
+  background: #fff;
+  border-top: 1px solid var(--ink);
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.06);
+}
+
+.consent__inner {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 16px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.consent__text {
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.consent__text a { color: var(--ink); }
+
+.consent__actions { display: flex; gap: 10px; }
+
+/* Both choices are the same size, colour and weight. Making "accept" louder
+   than "decline" is the thing regulators actually pull sites up on. */
+.consent__btn {
+  flex: 1 1 auto;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 11px 18px;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  cursor: pointer;
+}
+.consent__btn:hover { background: var(--wash); }
+
+@media (min-width: 620px) {
+  .consent__inner { flex-direction: row; align-items: center; justify-content: space-between; gap: 26px; }
+  .consent__actions { flex: none; }
+  .consent__btn { flex: none; min-width: 116px; }
+}
+
+.body h2 {
+  font-size: 1.24rem;
+  font-weight: 400;
+  letter-spacing: -0.006em;
+  margin: 34px 0 10px;
+}

@@ -1,5 +1,6 @@
 ---
-import { SITE, TRACKING, OUTBOUND_DEFAULTS } from '../config.js';
+import { SITE, OUTBOUND_DEFAULTS } from '../config.js';
+import Consent from '../components/Consent.astro';
 import '../styles/global.css';
 
 const { title, description, image, canonical } = Astro.props;
@@ -23,26 +24,6 @@ const shopHost = new URL(SITE.publisherUrl).hostname.replace(/^www\./, '');
     {image && <meta property="og:image" content={image} />}
     <meta name="twitter:card" content="summary_large_image" />
 
-    {TRACKING.metaPixelId && (
-      <script is:inline set:html={`
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-        document,'script','https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init','${TRACKING.metaPixelId}');fbq('track','PageView');
-      `} />
-    )}
-
-    {TRACKING.ga4Id && (
-      <>
-        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${TRACKING.ga4Id}`}></script>
-        <script is:inline set:html={`
-          window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
-          gtag('js',new Date());gtag('config','${TRACKING.ga4Id}');
-        `} />
-      </>
-    )}
   </head>
 
   <body>
@@ -60,9 +41,11 @@ const shopHost = new URL(SITE.publisherUrl).hostname.replace(/^www\./, '');
 
     <footer class="wrap foot">
       <p>
-        © {new Date().getFullYear()} {SITE.name} · {SITE.tagline} · <a href="/about/">About</a>
+        © {new Date().getFullYear()} {SITE.name} · {SITE.tagline} · <a href="/about/">About</a> · <a href="/privacy/">Privacy</a>
       </p>
     </footer>
+
+    <Consent />
 
     <!--
       Carries the ad's parameters across to the shop so Shopify doesn't book

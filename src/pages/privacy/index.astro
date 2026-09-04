@@ -1,0 +1,53 @@
+---
+import Base from '../../layouts/Base.astro';
+import { SITE, TRACKING } from '../../config.js';
+const tracks = Boolean(TRACKING.metaPixelId || TRACKING.ga4Id);
+---
+<Base title={`Privacy and cookies | ${SITE.name}`} description="What The Style News collects, why, and how to change your mind.">
+  <p class="kicker">Privacy</p>
+  <h1>Privacy and cookies</h1>
+  <div class="body">
+    <p>The short version: we don't collect anything about you unless you say yes,
+    and saying no changes nothing about how the site works.</p>
+
+    <h2>Who runs this site</h2>
+    <p>{SITE.name} is published by <strong>Son of John B.V.</strong>, Keizersstraat 32,
+    Amsterdam, the Netherlands. You can reach us at
+    <a href="mailto:hello@thestylenews.com">hello@thestylenews.com</a>.</p>
+
+    {tracks ? (
+      <>
+        <h2>What we'd like to set, and why</h2>
+        <p>If you accept, we load measurement tools that tell us whether our
+        advertising is working — roughly, how many people who saw an ad went on to
+        read an article or click through to a shop. They set cookies in your
+        browser and share data with the companies that provide them.</p>
+        <p>We load nothing until you choose. If you decline, or simply ignore the
+        banner, none of it runs.</p>
+
+        <h2>Changing your mind</h2>
+        <p>You can withdraw or change your choice at any time. It takes effect
+        immediately and we forget what you picked before.</p>
+        <p><button type="button" class="cta" onclick="window.tsnResetConsent && window.tsnResetConsent()">
+          Change my cookie choice
+        </button></p>
+      </>
+    ) : (
+      <>
+        <h2>What we set right now</h2>
+        <p>Nothing. This site currently loads no analytics, no advertising pixels
+        and no third-party scripts of any kind, and sets no cookies. If that
+        changes we'll ask before anything runs.</p>
+      </>
+    )}
+
+    <h2>Links to other sites</h2>
+    <p>Articles marked as partner content link to <a href={SITE.publisherUrl}>Son of John</a>.
+    Once you follow a link you're on their site, under their privacy policy.</p>
+
+    <h2>Your rights</h2>
+    <p>Under the GDPR you can ask what we hold about you, ask us to correct or
+    delete it, and complain to the Autoriteit Persoonsgegevens if you think we've
+    got it wrong. Email us first and we'll try to sort it out.</p>
+  </div>
+</Base>
