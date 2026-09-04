@@ -68,8 +68,6 @@ export default {
     { type: 'entry', num: 'The verdict', h2: 'Why it works' },
     { type: 'p', html: `None of this is complicated and none of it is expensive to try. It's comfortable clothes that look good, which is why it's spreading. Start with number one — it's the one nobody sees coming.` },
 
-    { type: 'note', html: `Photography on this page is AI-generated.` },
-
     {
       type: 'cta',
       text: 'Number one on the list. Ships worldwide.',
