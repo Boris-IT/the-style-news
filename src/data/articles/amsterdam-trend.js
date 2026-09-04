@@ -5,10 +5,10 @@ export default {
   partner: true,
   featured: true,   // pinned as the homepage lead regardless of date
   kicker: 'The list',
-  title: 'The Biggest Trend Out of Amsterdam Is About to Go Global',
-  dek: "It isn't a look. It's a method — one category, made properly — and the five labels pushing it hardest are already leaving the city.",
+  title: 'Five Amsterdam Labels About to Go Global',
+  dek: "The city's real export isn't a look but a method — one category, made properly. These are the five pushing it hardest, ranked.",
   description:
-    'Amsterdam’s most exportable fashion idea is a way of working, not a silhouette — and it has started to travel. Five labels ranked by how far they take it, from streetwear, footwear and denim to the drawer nobody thinks about.',
+    'Five Amsterdam labels, ranked by how completely they commit to the city’s real export — one category, made properly — from streetwear, footwear and denim to the drawer nobody thinks about.',
   author: 'The Style News Editors',
   date: '2026-09-04',
   dateLabel: '4 September 2026',
@@ -73,10 +73,10 @@ export default {
     { type: 'p', html: `<strong>Patta</strong> is the oldest name here, and it began in 2004 not as a brand but as a supply line. Edson Sabajo and Guillaume Schmidt — a DJ and an MC in the city's hip-hop scene — were hunting sneakers abroad and bringing them back to Amsterdam for people who couldn't get them here. The demand became a business, the business became a shop, and only then did the shop become a label.` },
     { type: 'p', html: `That order is the whole point. Patta spent years obsessed with one category as buyers and sellers before it made a single garment, which is why the label that came out of it had something to say. It sits at five not because the idea was weak but because it was first — the proof, before anyone else had tried, that an Amsterdam label could know one thing completely and build on that. Everything above it on this list is a more concentrated version of the same bet.` },
 
-    { type: 'entry', num: 'The verdict', h2: 'Why this counts as a trend' },
-    { type: 'p', html: `Trend undersells it, honestly. A trend is something you can spot from across the street, and nobody is going to walk past you and identify what you're wearing as Amsterdam. There's no logo doing the work and no silhouette to spot.` },
-    { type: 'p', html: `What's spreading is the premise — that a small label can pick one unfashionable category, take it seriously at the level of the fabric, and build a business on being the one company that bothered. Streetwear, eyewear, footwear, denim, and now the last drawer anyone thought to look in.` },
-    { type: 'p', html: `It's the least photogenic thing the city has produced. It's also the one that travels best — which is why, quietly, it has started to. Number one on the list is the easiest place to begin, since it's the thing you'll wear tomorrow regardless.` },
+    { type: 'entry', num: 'The verdict', h2: 'Why these five, and why now' },
+    { type: 'p', html: `None of them share a look. Nobody is going to walk past you and identify what you're wearing as Amsterdam; there's no logo doing the work and no silhouette to spot.` },
+    { type: 'p', html: `What they share is the premise — that a small label can pick one unfashionable category, take it seriously at the level of the fabric, and build a business on being the one company that bothered. Streetwear, eyewear, footwear, denim, and now the last drawer anyone thought to look in.` },
+    { type: 'p', html: `It's the least photogenic thing the city has produced. It's also the one that travels best — which is why, quietly, all five have started to. Number one on the list is the easiest place to begin, since it's the thing you'll wear tomorrow regardless.` },
 
     {
       type: 'cta',
