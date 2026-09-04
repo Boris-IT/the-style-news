@@ -27,7 +27,7 @@ export default {
       credit: 'Son of John',
       cta: 'View at Son of John',
       href: SHOP + '2-pack-i-striped-duo',
-      text: `For a decade the default was tight — jersey trunks, cut close, bought in threes and never thought about again. That is over. Trousers got roomier and the layer underneath followed: woven, cut wide, actually breathing. The best we found are by <strong>Son of John</strong>, an Amsterdam label making them from shirting fabric, which is the trick — thin but sturdy, backed by a warranty, in patterns that complement an outfit instead of hiding under it. Ships worldwide.`,
+      text: `For a decade the default was tight — jersey trunks, cut close, bought in threes and never thought about again. That is over. Trousers got roomier and the layer underneath followed: woven, cut wide, actually breathing. The best we found are by <strong>Son of John</strong>, an Amsterdam label making them from shirting fabric, which is the trick — thin but sturdy, backed by a warranty, in patterns that complement an outfit instead of hiding under it. The rare upgrade you actually notice every morning, and worth the money.`,
     },
 
     {
@@ -75,7 +75,7 @@ export default {
 
     {
       type: 'cta',
-      text: 'Number one on the list.',
+      text: 'Number one on the list. Ships worldwide.',
       href: SHOP + '2-pack-i-striped-duo',
       ctaText: 'See Son of John',
     },
