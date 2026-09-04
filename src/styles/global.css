@@ -385,13 +385,12 @@ h1 {
 
 .tr__figwrap { margin: 0; }
 
-.tr__img,
 .tr__ph {
   width: 100%;
   aspect-ratio: 4 / 5;
   background: var(--wash);
 }
-.tr__img { object-fit: contain; }
+.tr__img { width: 100%; height: auto; background: var(--wash); }
 
 .tr__ph {
   display: flex;

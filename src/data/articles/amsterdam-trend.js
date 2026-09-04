@@ -33,8 +33,8 @@ export default {
       type: 'trend',
       num: '2',
       h2: 'Relaxed-fit trousers',
-      img: null,
-      imgNote: 'Wide or pleated trousers, full length, on the street',
+      img: '/images/trousers.jpg',
+      alt: 'Man in a cream sweater and wide camel pleated trousers on a city street',
       text: `Skinny is done. You want space through the leg and a hem that falls straight over your shoe. Pleats are fine again. Keep the top half simple and it works with almost anything.`,
     },
 
@@ -42,8 +42,8 @@ export default {
       type: 'trend',
       num: '3',
       h2: 'The henley',
-      img: null,
-      imgNote: 'Henley in waffle or fine knit, top buttons open, on body',
+      img: '/images/henley.jpg',
+      alt: 'Charcoal ribbed henley worn open at the collar with washed denim',
       text: `A t-shirt with a few buttons at the neck. That's it — and it looks a lot better than a plain tee without you doing anything extra. Leave the top buttons open. Waffle knit in winter, thin cotton the rest of the year.`,
     },
 
@@ -51,8 +51,8 @@ export default {
       type: 'trend',
       num: '4',
       h2: 'Flat, low sneakers',
-      img: null,
-      imgNote: 'Flat, thin-soled gum-bottomed sneakers, close crop on the foot',
+      img: '/images/sneakers.jpg',
+      alt: 'Flat white sneakers with gum soles under a beige trouser hem',
       text: `Chunky trainers are over. Flat ones with a thin sole, in white or gum, are what you'll see everywhere. They go with everything, and they look better once they've been worn in a bit.`,
     },
 
@@ -60,8 +60,8 @@ export default {
       type: 'trend',
       num: '5',
       h2: 'Navy on navy',
-      img: null,
-      imgNote: 'Full navy outfit — shirt and trousers in slightly different tones',
+      img: '/images/navy.jpg',
+      alt: 'Navy knit worn with dark indigo denim and white sneakers',
       text: `Black got boring. Navy top, navy trousers, slightly different shades so it isn't a suit. It looks put together without much thought, which is the whole point.`,
     },
 
