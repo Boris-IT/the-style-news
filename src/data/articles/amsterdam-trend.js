@@ -8,7 +8,7 @@ export default {
   title: 'The 5 Biggest Amsterdam Fashion Trends Going Global',
   dek: "Five things guys in Amsterdam are wearing right now that the rest of Europe hasn't caught onto yet.",
   description:
-    'Five things men in Amsterdam are wearing right now: loose boxer shorts, wider trousers, the henley, flat sneakers and navy on navy. What they are and how to wear them.',
+    'Five things men in Amsterdam are wearing right now: loose boxer shorts, relaxed-fit trousers, the henley, flat sneakers and navy on navy. What they are and how to wear them.',
   author: 'The Style News Editors',
   date: '2026-09-04',
   dateLabel: '4 September 2026',
@@ -32,7 +32,7 @@ export default {
     {
       type: 'trend',
       num: '2',
-      h2: 'Trousers with room in them',
+      h2: 'Relaxed-fit trousers',
       img: null,
       imgNote: 'Wide or pleated trousers, full length, on the street',
       text: `Skinny is done. You want space through the leg and a hem that falls straight over your shoe. Pleats are fine again. Keep the top half simple and it works with almost anything.`,
