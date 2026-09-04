@@ -43,6 +43,22 @@ const more = live
         if (b.type === 'p') return <p set:html={b.html} />;
         if (b.type === 'pull') return <blockquote class="pull" set:html={b.html} />;
 
+        if (b.type === 'trend')
+          return (
+            <div class="trend">
+              <div class="trend__head">
+                <span class="trend__num">{b.num}</span>
+                <h2>{b.h2}</h2>
+              </div>
+              {b.img && (
+                <figure class="trend__fig">
+                  <img src={b.img} alt={b.alt} loading="lazy" />
+                  {b.caption && <figcaption>{b.caption}</figcaption>}
+                </figure>
+              )}
+            </div>
+          );
+
         if (b.type === 'entry')
           return (
             <div class="entry">

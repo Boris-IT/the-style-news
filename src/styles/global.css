@@ -375,3 +375,51 @@ h1 {
 .pick__label { border-bottom: 1px solid var(--rule); padding-bottom: 12px; }
 .pick__name { margin-top: 2px; }
 .pick .cta { margin-top: 2px; }
+
+/* ── Trend entries: big numeral, room for a picture ───────────────────── */
+
+.trend { margin: 54px 0 0; }
+
+.trend__head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  border-top: 1px solid var(--ink);
+  padding-top: 12px;
+}
+
+.trend__num {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--brand);
+  flex: none;
+  padding-top: 4px;
+}
+
+.trend__head h2 {
+  font-size: clamp(1.45rem, 4.6vw, 1.85rem);
+  line-height: 1.16;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+}
+
+.trend__fig { margin: 4px 0 20px; }
+.trend__fig img {
+  width: 100%;
+  background: var(--wash);
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+.trend__fig figcaption {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-top: 8px;
+}
+
+/* Tighter opening: the first paragraph shouldn't need a drop cap when the
+   intro is one short block. */
+.body > p:first-of-type::first-letter { font-size: 3.1em; }
