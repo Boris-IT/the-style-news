@@ -24,7 +24,7 @@ export default {
       h2: 'Loose-fitting boxer shorts',
       img: '/images/boxers.jpg',
       alt: 'Man in navy loose-fitting boxer shorts stepping out of a car on an Amsterdam canal',
-      text: `Tight trunks are on the way out. Loose woven boxers are more comfortable and they just look better — more grown up, less teenager. The best ones we found are from <a href="https://www.sonofjohnlabel.com/products/2-pack-i-striped-duo" rel="sponsored noopener"><strong>Son of John</strong></a>. They're made from shirt fabric, which makes them thin but strong, and they come with a warranty. It's a small upgrade that lifts your whole outfit. Their own patterns, and a small logo on the back that finishes them off.`,
+      text: `Tight trunks are on the way out. Loose woven boxers are more comfortable and they just look better — more grown up, less teenager. The best ones we found are from <a href="https://www.sonofjohnlabel.com/products/3-pack-i-everyday-office" rel="sponsored noopener"><strong>Son of John</strong></a>. They're made from shirt fabric, which makes them thin but strong, and they come with a warranty. It's a small upgrade that lifts your whole outfit. Their own patterns, and a small logo on the back that finishes them off.`,
     },
 
     {
@@ -66,6 +66,6 @@ export default {
     { type: 'entry', num: 'The verdict', h2: 'Why it works' },
     { type: 'p', html: `None of this is complicated and none of it is expensive to try. It's comfortable clothes that look good, which is why it's spreading. Start with number one — it's the one nobody sees coming.` },
 
-    { type: 'p', html: `Number one on the list is from <a href="https://www.sonofjohnlabel.com/products/2-pack-i-striped-duo" rel="sponsored noopener">Son of John</a>, which ships worldwide.` },
+    { type: 'p', html: `Number one on the list is from <a href="https://www.sonofjohnlabel.com/products/3-pack-i-everyday-office" rel="sponsored noopener">Son of John</a>, which ships worldwide.` },
   ],
 };
