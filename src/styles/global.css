@@ -530,8 +530,9 @@ h1 {
   margin: 30px 0 0;
 }
 
-/* Same footprint as the CTA on entry one, but plainly inert: outlined rather
-   than filled, default cursor, no hover. */
+/* Visually identical to the CTA on entry one — same fill, size, type and
+   padding — but still a span: no hover change, default cursor, not focusable,
+   so nothing simulates interactivity beyond the look. */
 .tr__tag {
   display: inline-block;
   font-family: var(--sans);
@@ -539,9 +540,8 @@ h1 {
   font-weight: 600;
   letter-spacing: 0.06em;
   padding: 11px 20px;
-  border: 1px solid var(--rule);
-  color: var(--ink-faint);
-  background: #fff;
+  background: var(--brand);
+  color: #fff;
   cursor: default;
   user-select: none;
 }
