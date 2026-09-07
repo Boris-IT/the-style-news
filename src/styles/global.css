@@ -545,3 +545,12 @@ h1 {
   cursor: default;
   user-select: none;
 }
+
+/* Inline links in body copy — underlined, ink-coloured, no button styling. */
+.body a, .tr__text a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.body a:hover, .tr__text a:hover { color: var(--brand); }
