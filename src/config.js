@@ -6,13 +6,13 @@ export const SITE = {
   domain: 'https://thestylenews.com',
   publisher: 'Son of John B.V.',
   publisherUrl: 'https://www.sonofjohnlabel.com',
+  contactUrl: 'https://www.sonofjohnlabel.com/pages/contact',
   // Article-level tag, shown under the byline the way magazines mark advertorial.
   // Names the commercial connection — required under the EU unfair-practices
   // rules (advertorial without disclosure is a per-se ban) and by Meta's
-  // landing-page policy. Ownership itself is stated on the About page.
+  // landing-page policy. This tag is now the site's only disclosure of the
+  // commercial connection, so it must stay on every partner article.
   partnerTag: 'Partner content · Son of John',
-  disclosure:
-    'The Style News is published by Son of John B.V. Articles featuring Son of John products are marked as partner content.',
 };
 
 // Tracking. Leave a value empty and its script simply isn't rendered.
