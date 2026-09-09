@@ -12,7 +12,7 @@ export const SITE = {
   // rules (advertorial without disclosure is a per-se ban) and by Meta's
   // landing-page policy. This tag is now the site's only disclosure of the
   // commercial connection, so it must stay on every partner article.
-  partnerTag: 'Partner content · Son of John',
+  partnerTag: 'Partner content',
 };
 
 // Tracking. Leave a value empty and its script simply isn't rendered.
