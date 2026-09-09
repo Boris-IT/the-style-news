@@ -527,9 +527,11 @@ h1 {
    but not so faint that it stops being a disclosure. */
 .disclaimer-foot {
   font-family: var(--sans);
-  font-size: 11px;
-  line-height: 1.6;
-  color: #93959a;
+  font-size: 10.5px;
+  line-height: 1.55;
+  /* Not lighter than this. Below roughly 3:1 on white this stops reading as a
+     disclosure at all, which is the thing it exists to be. */
+  color: #9a9ca1;
   margin: 46px 0 0;
   padding-top: 18px;
   border-top: 1px solid var(--rule);
