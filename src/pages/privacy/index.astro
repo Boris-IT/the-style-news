@@ -1,22 +1,20 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { SITE, TRACKING } from '../../config.js';
-const tracks = Boolean(TRACKING.metaPixelId || TRACKING.ga4Id);
+// Must match the condition in components/Consent.astro, or this page will
+// describe a site that sets nothing while the banner is busy setting things.
+const tracks = Boolean(TRACKING.metaPixelId || TRACKING.ga4Id || TRACKING.clarityId);
 ---
-<Base title={`Privacy and cookies | ${SITE.name}`} description="What The Style News collects, why, and how to change your mind.">
+<Base title={`Privacy and cookies | ${SITE.name}`} description="What this site collects, why, and how to change your mind.">
   <p class="kicker">Privacy</p>
   <h1>Privacy and cookies</h1>
   <div class="body">
     <p>The short version: we don't collect anything about you unless you say yes,
     and saying no changes nothing about how the site works.</p>
 
-    <h2>Who runs this site</h2>
-    <p>Published by Son of John B.V., Leidsekade 68A, Amsterdam. Questions about
-    this site or your data go through our <a href={SITE.contactUrl}>contact form</a>.</p>
-
     {tracks ? (
       <>
-        <h2>What we'd like to set, and why</h2>
+        <h2 id="cookies">What we'd like to set, and why</h2>
         <p>If you accept, we load measurement tools that tell us whether our
         advertising is working — roughly, how many people who saw an ad went on to
         read an article or click through to a shop. One of them also records how
@@ -36,7 +34,7 @@ const tracks = Boolean(TRACKING.metaPixelId || TRACKING.ga4Id);
       </>
     ) : (
       <>
-        <h2>What we set right now</h2>
+        <h2 id="cookies">What we set right now</h2>
         <p>Nothing. This site currently loads no analytics, no advertising pixels
         and no third-party scripts of any kind, and sets no cookies. If that
         changes we'll ask before anything runs.</p>
@@ -51,5 +49,9 @@ const tracks = Boolean(TRACKING.metaPixelId || TRACKING.ga4Id);
     <p>Under the GDPR you can ask what we hold about you, ask us to correct or
     delete it, and complain to the Autoriteit Persoonsgegevens if you think we've
     got it wrong. Get in touch with us first and we'll try to sort it out.</p>
+
+    <h2>Who runs this site</h2>
+    <p>Published by Son of John B.V., Leidsekade 68A, Amsterdam. Questions about
+    this site or your data go through our <a href={SITE.contactUrl}>contact form</a>.</p>
   </div>
 </Base>
