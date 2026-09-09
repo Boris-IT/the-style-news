@@ -29,7 +29,6 @@ const more = live
     <p class="byline">
       By <strong>{a.author}</strong> · {a.dateLabel} · {a.readingTime}
     </p>
-    {a.partner && <p class="tag">{SITE.partnerTag}</p>}
 
     {a.hero && (
       <>
@@ -118,6 +117,8 @@ const more = live
         return null;
       })}
     </div>
+
+    {a.partner && <p class="disclaimer-foot">{SITE.disclaimer}</p>}
   </article>
 
   {more.length > 0 && (

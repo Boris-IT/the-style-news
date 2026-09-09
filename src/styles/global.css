@@ -523,6 +523,18 @@ h1 {
   margin: 34px 0 10px;
 }
 
+/* Advertorial disclosure, set at the foot of the article. Small and quiet,
+   but not so faint that it stops being a disclosure. */
+.disclaimer-foot {
+  font-family: var(--sans);
+  font-size: 11px;
+  line-height: 1.6;
+  color: #93959a;
+  margin: 46px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+}
+
 /* Small disclosures at the foot of an article — AI imagery, corrections. */
 .note {
   font-family: var(--sans);

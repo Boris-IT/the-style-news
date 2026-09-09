@@ -7,12 +7,12 @@ export const SITE = {
   publisher: 'Son of John B.V.',
   publisherUrl: 'https://www.sonofjohnlabel.com',
   contactUrl: 'https://www.sonofjohnlabel.com/pages/contact',
-  // Article-level tag, shown under the byline the way magazines mark advertorial.
-  // Names the commercial connection — required under the EU unfair-practices
-  // rules (advertorial without disclosure is a per-se ban) and by Meta's
-  // landing-page policy. This tag is now the site's only disclosure of the
-  // commercial connection, so it must stay on every partner article.
-  partnerTag: 'Partner content',
+  // Advertorial disclosure, printed at the foot of every article marked
+  // partner: true. Advertorial without a disclosure is a per-se ban under
+  // the EU unfair commercial practices rules and a rejection trigger for
+  // Meta's landing-page review, so this must stay on every partner article.
+  disclaimer:
+    'Disclaimer: This article is an advertorial. Although we aim to provide valuable and accurate information, the content is intended for commercial purposes and may be designed to promote products and services. The information shown is based on marketing insight and cannot be regarded as independent advice. Always consult a specialist or expert before deciding to purchase a product.',
 };
 
 // Tracking. Leave a value empty and its script simply isn't rendered.
