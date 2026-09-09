@@ -4,7 +4,7 @@ import { TRACKING, SITE } from '../config.js';
 // The banner only exists when there is actually something to consent to.
 // With no tracking IDs configured the site sets nothing, so asking would be
 // theatre — and a banner that appears for no reason trains people to dismiss it.
-const needsConsent = Boolean(TRACKING.metaPixelId || TRACKING.ga4Id);
+const needsConsent = Boolean(TRACKING.metaPixelId || TRACKING.ga4Id || TRACKING.clarityId);
 ---
 {needsConsent && (
   <>
@@ -22,7 +22,7 @@ const needsConsent = Boolean(TRACKING.metaPixelId || TRACKING.ga4Id);
       </div>
     </div>
 
-    <script is:inline define:vars={{ pixel: TRACKING.metaPixelId, ga4: TRACKING.ga4Id }}>
+    <script is:inline define:vars={{ pixel: TRACKING.metaPixelId, ga4: TRACKING.ga4Id, clarityId: TRACKING.clarityId }}>
       (function () {
         var KEY = 'tsn-consent';
         var VERSION = 1;
@@ -50,6 +50,23 @@ const needsConsent = Boolean(TRACKING.metaPixelId || TRACKING.ga4Id);
             window.gtag = function () { dataLayer.push(arguments); };
             gtag('js', new Date());
             gtag('config', ga4);
+          }
+
+          // Microsoft Clarity — heatmaps and session replay. The tag only runs
+          // once someone has accepted, and consentv2 tells Clarity it may use
+          // cookies. Without that signal Clarity runs cookieless and treats
+          // every page view as a new visitor, which is useless for funnels.
+          if (clarityId) {
+            (function (c, l, a, r, i, t, y) {
+              c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+              t = l.createElement(r); t.async = 1;
+              t.src = 'https://www.clarity.ms/tag/' + i;
+              y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+            })(window, document, 'clarity', 'script', clarityId);
+            window.clarity('consentv2', {
+              ad_Storage: 'granted',
+              analytics_Storage: 'granted'
+            });
           }
         }
 

@@ -19,6 +19,7 @@ export const SITE = {
 export const TRACKING = {
   metaPixelId: '',   // e.g. '123456789012345'
   ga4Id: '',         // e.g. 'G-XXXXXXXXXX'
+  clarityId: '',     // Microsoft Clarity project id, e.g. 'ab12cd34ef'
 };
 
 // Every outbound link to the shop gets these, plus whatever UTMs the visitor
