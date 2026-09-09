@@ -289,6 +289,9 @@ h1 {
 .pick__img { max-height: 300px; object-fit: contain; margin-inline: auto; }
 
 /* Advertorial tag under the byline — small, grey, present. */
+/* The advertorial disclosure. No box, and set lighter than body copy — but
+   deliberately not any lighter than this: it is the one piece of text on the
+   page that has to stay clearly identifiable. */
 .tag {
   display: inline-block;
   font-family: var(--sans);
@@ -296,9 +299,8 @@ h1 {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink-faint);
-  border: 1px solid var(--rule);
-  padding: 4px 9px;
+  color: #93959a;
+  padding: 0;
   margin: 0 0 34px;
 }
 
